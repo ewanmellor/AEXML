@@ -278,7 +278,7 @@ open class AEXMLElement {
         
         if attributes.count > 0 {
             // insert attributes
-            for (key, value) in attributes {
+            for (key, value) in attributes.sorted(by: { $0.key < $1.key }) {
                 xml += " \(key)=\"\(value.xmlEscaped)\""
             }
         }
